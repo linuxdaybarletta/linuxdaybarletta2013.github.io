@@ -10,6 +10,9 @@ body, html {
     background-image: -webkit-linear-gradient(bottom, #0073b2 0%, #0081c8 15%, #00a3ef 100%);
     background-image: linear-gradient(to top, #0073b2 0%, #0081c8 15%, #00a3ef 100%);
 }
+body {
+    overflow: hidden;
+}
 #top {
     height: 75px;
     background-image: -ms-linear-gradient(top, #ebf7f7 0%, #daecf0 100%);
@@ -36,11 +39,10 @@ body, html {
     font: 1.3em 'Raleway', sans-serif;
     color: #333;
     text-align: center;
+    /* display: none; <- JavaScript on DOM ready */
+}
+#paw {
+    text-align: center;
+    margin-top: 40px;
     display: none;
-}
-a:link, a:visited {
-    text-decoration: none;
-}
-#text img {
-    margin-top: 15px;
 }
