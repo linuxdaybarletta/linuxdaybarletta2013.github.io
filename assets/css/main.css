@@ -19,6 +19,8 @@
     }
     .footer .container {
         background:url('../textures/light_wool.png');
+        -webkit-box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.05);
         box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.05);
     }
     .footer p {
@@ -137,6 +139,8 @@ hr.linux {
     border-bottom: 1px solid #ddd;
     text-align: center;
     background: url('../textures/subtle_freckles.png') repeat scroll 0% 0% transparent;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05) inset;
+    -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05) inset;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05) inset;
 }
 .followbuttons div {
@@ -217,7 +221,7 @@ html, body {
 .footer {
     position: relative;
     margin-top: -71px !important; /* negative value of footer height */
-    height: 71px;
+    height: 66px;
     clear:both;
 }
 .footer p {
