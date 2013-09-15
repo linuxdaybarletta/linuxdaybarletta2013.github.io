@@ -1,3 +1,6 @@
+[linuxdaybarletta.it](http://www.linuxdaybarletta.it/)
+======================================================
+
 Tecnologie utilizzate
 ---------------------
 
