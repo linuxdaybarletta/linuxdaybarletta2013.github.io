@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Linux Day 2013 - Barletta - Sponsor</title>
+        <title>Linux Day 2013 - Barletta - Dove saremo</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Linux Day 2013 a Barletta. Install fest, divertimento ed innovazione al party nazionale dedicato a GNU/Linux.">
@@ -32,6 +32,10 @@
         </script>
         <script src="assets/js/bootstrap.js">
         </script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false&v=3">
+        </script>
+        <script src="assets/js/gmaps.js">
+        </script>
         <!-- /Scripts }}} -->
     </head>
     <!-- /head }}} -->
@@ -41,23 +45,31 @@
         <div class="wrapper container">
             <!-- jumbotron {{{ -->
             <div class="jumbotron">
-                <img src="assets/img/title-desktop.png" alt="Linux Day Barletta 2013" class="visible-desktop">
-                <img src="assets/img/title-tablet.png" alt="Linux Day Barletta 2013" class="visible-tablet">
-                <img src="assets/img/title-phone.png" alt="Linux Day Barletta 2013" class="visible-phone">
+                <a href="http://giovaniopenspace.org/contatti/"><img class="headerimg" src="assets/img/gos-banner.png" alt="Linux Day Barletta 2013 - Laboratorio Urbano Giovani Open Space"></a>
             </div>
             <!-- /jumbotron }}} -->
             <hr class="linux">
             <!-- content {{{ -->
             <div class="content">
                 <p>
-                    In quanto <b>sponsor</b> del <strong>Linux Day Barletta 2013</strong> hai la possibilità di vedere esposto il tuo <b>logo</b> in questa pagina, oltre che su altro materiale di supporto alla campagna di promozione dell'evento.
+                    Le <b><a href="linuxday-barletta-2013-attivita.html">attività</a></b>
+                    si svolgeranno nelle aule messe a disposizione dal
+                    <b>Laboratorio Urbano GOS</b>, in viale Guglielmo Marconi
+                    49, a Barletta.
                 </p>
                 <p>
-                    Il tuo contributo al Linux Day di Barletta può risultare determinante. Per contribuire è sufficiente anche solo mettere a disposizione del materiale utile ai fini dello svolgimento delle attività.
+                    I locali sono facilmente raggiungibili <b>a piedi</b> per
+                    chi arriva dalla stazione ferroviaria. È possibile usufruire
+                    dell'ingresso sul lato opposto a quello dell'ingresso
+                    principale (lato della linea <i>Bari Nord</i>).
                 </p>
                 <p>
-                    Se vuoi proporti come sponsor per il Linux Day Barletta 2013 invia un'<a href="linuxday-barletta-2013-contatti.html">email</a> di richiesta, verrai ricontattato quanto prima.
+                    Il percorso è molto semplice anche per chi avesse intenzione
+                    di raggiungerci <b>in automobile</b>. Nelle vicinanze,
+                    adiacenti all'arena Paladisfida, sono presenti un
+                    parcheggio gratuito ed <a href="https://plus.google.com/113962713241019529555/about">uno a pagamento</a>.
                 </p>
+                <div id="map-canvas"></div>
             </div>
             <!-- /content }}} -->
             <div class="pushdown"></div>
@@ -67,9 +79,9 @@
         <div class="footer">
             <div class="container">
                 <p>
-                    Linux Day Barletta 2013
-                    <span class="pull-right">
-                        <a href="http://nicolalamacchia.com">Credits</a></span>
+                Linux Day Barletta 2013
+                <span class="pull-right">
+                    <a href="http://nicolalamacchia.com">Credits</a></span>
                 </p>
             </div>
         </div>
@@ -85,7 +97,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="brand hidden-phone" href="http://www.linuxday.it">Linux Day 2013</a>
-                        <a class="brand hidden-desktop hidden-tablet" href="http://www.linuxday.it">LD'13</a>
+                        <a class="brand visible-phone" href="http://www.linuxday.it">LD'13</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
                                 <li>
@@ -94,13 +106,13 @@
                                 <li>
                                 <a href="linuxday-barletta-2013-chi-siamo.html">Chi siamo</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                 <a href="linuxday-barletta-2013-dove-saremo.html">Dove saremo</a>
                                 </li>
                                 <li>
                                 <a href="linuxday-barletta-2013-attivita.html">Attività</a>
                                 </li>
-                                <li class="active">
+                                <li>
                                 <a href="linuxday-barletta-2013-sponsor.html">Sponsor</a>
                                 </li>
                                 <li>

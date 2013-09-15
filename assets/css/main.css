@@ -1,5 +1,10 @@
 /* Media queries {{{ */
 
+@media (min-width: 1200px) {
+    #fill-contacts {
+        top: -15px;
+    }
+}
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) {/*{{{*/
     body {
@@ -16,6 +21,10 @@
     }
     .content {
         margin: 0 50px;
+    }
+    #map-canvas {
+        width: 500px;
+        height: 400px;
     }
     .footer .container {
         background:url('../textures/light_wool.png');
@@ -36,6 +45,10 @@
     }
     .content {
         margin: 0 25px;
+    }
+    #map-canvas {
+        width: 350px;
+        height: 280px;
     }
     .socialwell {
         -moz-border-radius: 3px;
@@ -63,6 +76,10 @@
     }
     .content {
         margin: 0 15px;
+    }
+    #map-canvas {
+        width: 240px;
+        height: 192px;
     }
     .socialwell {
         -moz-border-radius: 3px;
@@ -120,12 +137,17 @@ hr.linux {
 .content img.pull-right {
     margin: 20px auto 20px 30px;
 }
-#tux {
-    top: -15px;
+#fill-contacts {
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
     font-size: 120%;
+}
+#map-canvas {
+    margin: 40px auto auto;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 #callmlsnd {
     text-align: center;
@@ -225,7 +247,7 @@ html, body {
     clear:both;
 }
 .footer p {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 .footer .container {
     border-top: 1px solid #eee;
