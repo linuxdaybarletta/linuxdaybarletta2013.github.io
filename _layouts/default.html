@@ -81,112 +81,25 @@
                 {{ content }}
             </div>
             <!-- /content ]]] -->
-            {% if page.share or page.follow %}
             <!-- socialwell [[[ -->
-            <div class="socialbuttons socialwell">
-                {% if page.follow %}
-                <!-- follow [[[ -->
-                <div class="followbuttons">
-                    <h4>Seguici!</h4>
-                    <!-- twitter -->
-                    <div class="twitter-follow" style="display:inline">
-                        <a href="https://twitter.com/LDBarletta"
-                            class="twitter-follow-button"
-                            data-show-count="false"
-                            data-show-screen-name="false"
-                            data-lang="it">Segui @LDBarletta</a>
-                    </div>
-                    <!-- g+ -->
-                    <div class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/118028692961657819578" data-rel="publisher"></div>
-                    <!-- facebook -->
-                    <div class="fb-follow" data-href="https://www.facebook.com/PugliaSOS" data-layout="button_count" data-show-faces="false" data-width="450"></div>
-                </div>
-                <!-- /follow ]]] -->
-                {% endif %}
-                {% if page.share %}
-                <!-- share [[[ -->
-                <div class="sharebuttons">
-                    <h4>Condividi!</h4>
-                    <span class="st_twitter_large" displayText="Tweet"></span>
-                    <span class="st_facebook_large" displayText="Facebook"></span>
-                    <span class="st_googleplus_large" displayText="Google +"></span>
-                    <span class="st_linkedin_large" displayText="LinkedIn"></span>
-                    <span class="st_tumblr_large" displayText="Tumblr"></span>
-                    <span class="st_reddit_large" displayText="Reddit"></span>
-                    <span class="st_pinterest_large" displayText="Pinterest"></span>
-                    <span class="st_email_large" displayText="Email"></span>
-                    <span class="st_sharethis_large" displayText="ShareThis"></span>
-                </div>
-                <!-- /share ]]] -->
-                <!-- recommend [[[ -->
-                <div class="recommendbuttons">
-                    <!-- twitter -->
-                    <div class="twitter-tweet" style="display:inline"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Linux Day 2013 finalmente a Barletta!" data-lang="it" data-related="LDBarletta" data-hashtags="LinuxDay">Tweet</a></div>
-                    <!-- g+ -->
-                    <div class="g-plusone" data-size="medium"></div>
-                    <!-- facebook -->
-                    <div class="fb-like" data-href="http://linuxdaybarletta.it" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-                </div>
-                <!-- /recommend ]]] -->
-                {% endif %}
-            </div>
-            <!-- /socialwell ]]] -->
+            {% if page.share or page.follow %}
+            {% include social.html %}
             {% endif %}
+            <!-- /socialwell ]]] -->
             <div class="pushdown"></div>
         </div>
         <!-- /wrapper ]]] -->
         <!-- footer [[[ -->
-        <div class="footer">
-            <div class="container">
-                <p>
-                Linux Day Barletta 2013
-                <span class="pull-right">
-                    <a href="https://github.com/linuxdaybarletta/linuxdaybarletta.github.io">GitHub</a>
-                    ✧
-                    <a href="http://nicolalamacchia.com">Credits</a></span>
-                </p>
-            </div>
-        </div>
+        {% include footer.html %}
         <!-- /footer ]]] -->
         <!-- navbar [[[ -->
-        <div class="navbar-wrapper">
-            <div class="container">
-                <div class="navbar navbar-inverse">
-                    <div class="navbar-inner">
-                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="brand hidden-phone" href="http://www.linuxday.it">Linux Day 2013</a>
-                        <a class="brand visible-phone" href="http://www.linuxday.it">LD'13</a>
-                        <div class="nav-collapse collapse">
-                            {% include navbar.html %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include navbar.html %}
         <!-- /navbar ]]] -->
-        {% if page.share or page.follow %}
         <!-- Social scripts [[[ -->
-        <!-- follow [[[ -->
-        <!-- twitter [[[ -->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        <!-- /twitter ]]] -->
-        <!-- facebook [[[ -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-        <!-- /facebook ]]] -->
-        <!-- /follow ]]] -->
-        <!-- /Social scripts ]]] -->
+        {% if page.share or page.follow %}
+        {% include social_scripts.html %}
         {% endif %}
+        <!-- /Social scripts ]]] -->
     </body>
     <!-- /body ]]] -->
 </html>
