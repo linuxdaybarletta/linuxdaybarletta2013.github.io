@@ -1,6 +1,8 @@
 [linuxdaybarletta.it](http://www.linuxdaybarletta.it/)
 ======================================================
 
+Repository ufficiale dei sorgenti del sito web.
+
 Tecnologie utilizzate
 ---------------------
 
