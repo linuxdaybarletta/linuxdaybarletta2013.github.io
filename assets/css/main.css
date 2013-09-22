@@ -1,10 +1,16 @@
 /* Media queries {{{ */
 
-@media (min-width: 1200px) {
+/* Desktop to large desktop */
+@media (min-width: 979px) {/*{{{*/
     #fill-contacts {
         top: -15px;
     }
-}
+}/*}}}*/
+@media (min-width: 979px) and (max-width: 1199px) {/*{{{*/
+    hr.linux {
+        width: 920px;
+    }
+}/*}}}*/
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) {/*{{{*/
     body {
@@ -37,7 +43,6 @@
         margin: 30px 30px 20px;
     }
 }/*}}}*/
-
 /* landscape phone to portrait tablet */
 @media (min-width: 481px) and (max-width: 767px) {/*{{{*/
     .jumbotron img {
@@ -65,7 +70,6 @@
         font-size: 1.1em;
     }
 }/*}}}*/
-
 /* Landscape phones and down */
 @media (max-width: 480px) {/*{{{*/
     body {
@@ -104,7 +108,6 @@ body {
 }
 .container {
     margin: 0 auto;
-    max-width: 1000px;
 }
 .container > hr {
     margin: 30px auto 30px;
