@@ -10,13 +10,19 @@ jumbolink: #
 permalink: linuxday-barletta-2013-partecipazione.html
 weight: 7
 ---
+<p>Per aiutarci ad accoglierti al megio ti chiediamo di compilare il modulo
+sottostante in tutti i suoi campi. Grazie!</p>
+<br>
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h3 class="panel-title">Iscriviti!</h3>
+    <p class="success-p" style="display:none">Ti aspettiamo!</p>
+    <p class="danger-p" style="display:none">Tutti i campi sono obbligatori!</p>
+</div>
+<div class="panel-body" style="padding:30px 20px">
 <div class="row">
     <div class="col-md-1 col-lg-2"></div>
     <div id="form-div" class="col-md-10 col-lg-8">
-        <div class="alert alert-success text-center" style="display:none;">
-            <b>Grazie!</b> Ti aspiettiamo!
-        </div>
-
         <form role="form" id="form">
           <div class="form-group">
               <label class="control-label" for="email" id="email-info" rel="popover" data-trigger="hover" data-content="Potremmo volerti contattare per avvisi o comunicazioni, niente di più, fidati!" data-original-title="Cosa ce ne facciamo?">Indirizzo email <sup class="muted">?</sup></label>
@@ -49,6 +55,8 @@ weight: 7
     </div>
     <div class="col-md-1 col-lg-2"></div>
 </div>
+</div>
+</div>
 
 <script type="text/javascript">
 $(function() {
@@ -62,9 +70,16 @@ $("#form").validate({
             data: $("input, select").serialize()
         }).done(function() {
             $('input, select, form button').prop('disabled', true);
-            $('.alert').slideDown();
+            $(".panel").removeClass("panel-default").removeClass("panel-danger").addClass("panel-success");
+            $(".panel-title").text("Grazie!");
+            $(".danger-p").slideUp();
+            $(".success-p").slideDown();
         });
         return false;
+    },
+    invalidHandler: function(event, validator) {
+        $(".panel").removeClass("panel-default").removeClass("panel-success").addClass("panel-danger");
+        $(".danger-p").slideDown();
     },
     errorPlacement: function(error, element) { },
     errorClass: "has-error",
