@@ -16,8 +16,7 @@ sottostante in tutti i suoi campi. Grazie!</p>
 <div class="panel panel-default">
 <div class="panel-heading">
     <h3 class="panel-title">Iscriviti!</h3>
-    <p class="success-p" style="display:none">Ti aspettiamo!</p>
-    <p class="danger-p" style="display:none">Tutti i campi sono obbligatori!</p>
+    <p class="panel-p" style="display:none"></p>
 </div>
 <div class="panel-body" style="padding:30px 20px">
 <div class="row">
@@ -67,19 +66,44 @@ $("#form").validate({
         $.ajax({
             dataType: 'jsonp',
             url: "http://getsimpleform.com/messages/ajax?form_api_token=e19307a500e5f6c23047d00a5074b6fc",
-            data: $("input, select").serialize()
-        }).done(function() {
-            $('input, select, form button').prop('disabled', true);
-            $(".panel").removeClass("panel-default").removeClass("panel-danger").addClass("panel-success");
-            $(".panel-title").text("Grazie!");
-            $(".danger-p").slideUp();
-            $(".success-p").slideDown();
+            data: $("input, select").serialize(),
+            success: function() {
+                $('input, select, form button').prop('disabled', true);
+                $(".panel")
+                    .removeClass("panel-default")
+                    .removeClass("panel-danger")
+                    .removeClass("panel-warning")
+                    .addClass("panel-success");
+                $(".panel-title").text("Grazie!");
+                $(".panel-p").slideUp(function() {
+                    $(".panel-p").text("Ti aspettiamo!");
+                    $(".panel-p").slideDown();
+                });
+            },
+            error: function() {
+                $(".panel")
+                    .removeClass("panel-default")
+                    .removeClass("panel-success")
+                    .removeClass("panel-danger")
+                    .addClass("panel-warning");
+                $(".panel-p").slideUp(function() {
+                    $(".panel-p").text("Qualcosa è andato storto, riprova!");
+                    $(".panel-p").slideDown();
+                });
+            }
         });
         return false;
     },
     invalidHandler: function(event, validator) {
-        $(".panel").removeClass("panel-default").removeClass("panel-success").addClass("panel-danger");
-        $(".danger-p").slideDown();
+        $(".panel")
+            .removeClass("panel-default")
+            .removeClass("panel-success")
+            .removeClass("panel-warning")
+            .addClass("panel-danger");
+        $(".panel-p").slideUp(function() {
+            $(".panel-p").text("Tutti i campi sono obbligatori!");
+            $(".panel-p").slideDown();
+        });
     },
     errorPlacement: function(error, element) { },
     errorClass: "has-error",
