@@ -143,6 +143,13 @@ hr.linux {
 li {
   line-height: 1.4em;
 }
+form {
+    text-align: left;
+    font-size: 90%;
+}
+.popover {
+    font-size: 80%;
+}
 #fill-contacts {
     margin-top: 0;
     margin-bottom: 0;

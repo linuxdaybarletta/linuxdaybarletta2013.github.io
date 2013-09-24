@@ -1,0 +1,103 @@
+---
+layout: default
+title: Partecipazione
+validator: true
+jumboimages:
+ - title-desktop.png
+ - title-tablet.png
+ - title-phone.png
+jumbolink: #
+permalink: linuxday-barletta-2013-partecipazione.html
+weight: 7
+---
+<div class="row">
+    <div class="col-md-1 col-lg-2"></div>
+    <div id="form-div" class="col-md-10 col-lg-8">
+        <div class="alert alert-success text-center" style="display:none;">
+            <b>Grazie!</b> Ti aspiettiamo!
+        </div>
+
+        <form role="form" id="form">
+          <div class="form-group">
+              <label class="control-label" for="email" id="email-info" rel="popover" data-trigger="hover" data-content="Potremmo volerti contattare per avvisi o comunicazioni, niente di più, fidati!" data-original-title="Cosa ce ne facciamo?">Indirizzo email <sup class="muted">?</sup></label>
+            <input type="email" class="form-control" id="email" placeholder="email" name="email">
+          </div>
+
+          <div class="form-group">
+              <label class="control-label" for="how">Come sei venuto a conoscenza dell'evento?</label>
+              <select class="form-control" id="how" name="how" required>
+                  <option value=''>Seleziona...</option>
+                  <option value='Carta'>Pubblicità cartacea</option>
+                  <option value='Media'>Mezzi d'informazione</option>
+                  <option value='Social'>Social networks</option>
+                  <option value='Ricerca'>Tramite una ricerca online</option>
+                  <option value='Voci'>Ne ho sentito parlare in giro (attraverso amici, ecc.)</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label" for="DVD">Il tuo computer è provvisto di lettore DVD?</label>
+              <select class="form-control" id="DVD" name="DVD" required>
+                  <option value=''>Seleziona...</option>
+                  <option value='No'>No</option>
+                  <option value='Si'>Sì</option>
+              </select>
+          </div>
+
+          <button type="submit" data-loading-text="Attendi..." class="btn btn-lg btn-default" style="margin-top:10px"><b>Invia!</b></button>
+        </form>
+    </div>
+    <div class="col-md-1 col-lg-2"></div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    $("#email-info").popover();
+});
+$("#form").validate({
+    submitHandler: function() {
+        $.ajax({
+            dataType: 'jsonp',
+            url: "http://getsimpleform.com/messages/ajax?form_api_token=e19307a500e5f6c23047d00a5074b6fc",
+            data: $("input, select").serialize()
+        }).done(function() {
+            $('input, select, form button').prop('disabled', true);
+            $('.alert').slideDown();
+        });
+        return false;
+    },
+    errorPlacement: function(error, element) { },
+    errorClass: "has-error",
+    validClass: "has-success",
+    rules: {
+        email: {
+            required: true,
+            email: true
+        },
+        how: {
+            required: true
+        },
+        DVD: {
+            required: true
+        }
+    },
+    messages: {
+        email: {
+            required: 'Questo campo è richiesto',
+            email: 'Inserisci un indirizzo email valido'
+        },
+        how: {
+            required: 'Questo campo è richiesto'
+        },
+        DVD: {
+            required: 'Questo campo è richiesto'
+        }
+    },
+    highlight: function(element, errorClass, validClass) {
+        $(element).closest('.form-group').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.form-group').addClass(validClass).removeClass(errorClass);
+    },
+});
+</script>
