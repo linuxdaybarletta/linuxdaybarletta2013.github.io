@@ -13,54 +13,58 @@ weight: 7
 <p>Per aiutarci ad accoglierti al megio ti chiediamo di compilare il modulo
 sottostante in tutti i suoi campi. Grazie!</p>
 <br>
-<div class="panel panel-default">
-<div class="panel-heading">
-    <h3 class="panel-title">Iscriviti!</h3>
-    <p class="panel-p" style="display:none"></p>
-</div>
-<div class="panel-body" style="padding:30px 20px">
-<div class="row">
-    <div class="col-md-1 col-lg-2"></div>
-    <div id="form-div" class="col-md-10 col-lg-8">
-        <form role="form" id="form">
-          <div class="form-group">
-              <label class="control-label" for="email" id="email-info" rel="popover" data-trigger="hover" data-content="Potremmo volerti contattare per avvisi o comunicazioni, niente di più, fidati!" data-original-title="Cosa ce ne facciamo?">Indirizzo email <sup class="muted">?</sup></label>
-            <input type="email" class="form-control" id="email" placeholder="email" name="email">
-          </div>
-
-          <div class="form-group">
-              <label class="control-label" for="how">Come sei venuto a conoscenza dell'evento?</label>
-              <select class="form-control" id="how" name="how" required>
-                  <option value=''>Seleziona...</option>
-                  <option value='Carta'>Pubblicità cartacea</option>
-                  <option value='Media'>Mezzi d'informazione</option>
-                  <option value='Social'>Social networks</option>
-                  <option value='Ricerca'>Tramite una ricerca online</option>
-                  <option value='Voci'>Ne ho sentito parlare in giro (attraverso amici, ecc.)</option>
-              </select>
-          </div>
-
-          <div class="form-group">
-              <label class="control-label" for="DVD">Il tuo computer è provvisto di lettore DVD?</label>
-              <select class="form-control" id="DVD" name="DVD" required>
-                  <option value=''>Seleziona...</option>
-                  <option value='No'>No</option>
-                  <option value='Si'>Sì</option>
-              </select>
-          </div>
-
-          <button type="submit" data-loading-text="Attendi..." class="btn btn-lg btn-default" style="margin-top:10px"><b>Invia!</b></button>
-        </form>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Iscriviti!</h3>
+        <p class="panel-p" style="display:none"></p>
     </div>
-    <div class="col-md-1 col-lg-2"></div>
-</div>
-</div>
+    <div class="panel-body" style="padding:30px 20px">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div id="form-div" class="col-md-10 col-lg-8">
+                <form role="form" id="form">
+                    <div class="form-group">
+                        <label class="control-label" for="email" id="email-info" rel="popover" data-trigger="hover" data-content="Potremmo volerti contattare per avvisi o comunicazioni, niente di più, fidati!" data-original-title="Per cosa lo usiamo?" required>Indirizzo email <sup class="muted">?</sup></label>
+                        <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="how">Come sei venuto a conoscenza dell'evento?</label>
+                        <select class="form-control" id="how" name="how" required>
+                            <option class="muted" value=''>Seleziona...</option>
+                            <option value='Carta'>Pubblicità cartacea</option>
+                            <option value='Media'>Mezzi d'informazione</option>
+                            <option value='Social'>Social networks</option>
+                            <option value='Ricerca'>Tramite una ricerca online</option>
+                            <option value='Voci'>Attraverso amici, ne ho sentito parlare in giro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="DVD">Il tuo computer è provvisto di lettore DVD?</label>
+                        <select class="form-control" id="DVD" name="DVD" required>
+                            <option value=''>Seleziona...</option>
+                            <option value='No'>No</option>
+                            <option value='Si'>Sì</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" data-loading-text="Attendi..." class="btn btn-lg btn-default" style="margin-top:10px"><b>Invia!</b></button>
+                </form>
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
 $(function() {
     $("#email-info").popover();
 });
+var default_panel = "panel-info";
+var error_panel = "panel-danger";
+var warning_panel = "panel-warning";
+var success_panel = "panel-success";
 $("#form").validate({
     submitHandler: function() {
         $.ajax({
@@ -70,10 +74,10 @@ $("#form").validate({
             success: function() {
                 $('input, select, form button').prop('disabled', true);
                 $(".panel")
-                    .removeClass("panel-default")
-                    .removeClass("panel-danger")
-                    .removeClass("panel-warning")
-                    .addClass("panel-success");
+                    .removeClass(default_panel)
+                    .removeClass(error_panel)
+                    .removeClass(warning_panel)
+                    .addClass(success_panel);
                 $(".panel-title").text("Grazie!");
                 $(".panel-p").slideUp(function() {
                     $(".panel-p").text("Ti aspettiamo!");
@@ -82,10 +86,10 @@ $("#form").validate({
             },
             error: function() {
                 $(".panel")
-                    .removeClass("panel-default")
-                    .removeClass("panel-success")
-                    .removeClass("panel-danger")
-                    .addClass("panel-warning");
+                    .removeClass(default_panel)
+                    .removeClass(error_panel)
+                    .removeClass(success_panel)
+                    .addClass(warning_panel);
                 $(".panel-p").slideUp(function() {
                     $(".panel-p").text("Qualcosa è andato storto, riprova!");
                     $(".panel-p").slideDown();
@@ -96,10 +100,10 @@ $("#form").validate({
     },
     invalidHandler: function(event, validator) {
         $(".panel")
-            .removeClass("panel-default")
-            .removeClass("panel-success")
-            .removeClass("panel-warning")
-            .addClass("panel-danger");
+            .removeClass(default_panel)
+            .removeClass(warning_panel)
+            .removeClass(success_panel)
+            .addClass(error_panel);
         $(".panel-p").slideUp(function() {
             $(".panel-p").text("Tutti i campi sono obbligatori!");
             $(".panel-p").slideDown();
