@@ -1,12 +1,12 @@
 /* Media queries {{{ */
 
 /* Desktop to large desktop */
-@media (min-width: 979px) {/*{{{*/
+@media (min-width: 980px) {/*{{{*/
     #fill-contacts {
         top: -15px;
     }
 }/*}}}*/
-@media (min-width: 979px) and (max-width: 1199px) {/*{{{*/
+@media (min-width: 980px) and (max-width: 1200px) {/*{{{*/
     hr.linux {
         width: 920px;
     }
