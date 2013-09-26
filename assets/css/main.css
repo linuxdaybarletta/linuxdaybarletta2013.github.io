@@ -144,6 +144,19 @@ hr.linux {
 li {
   line-height: 1.4em;
 }
+.top-message {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 60px;
+    z-index: 0;
+}
+.top-message > .alert {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    text-align: left;
+}
 #modulo {
     margin-top: -60px;
     padding-bottom: 60px;
