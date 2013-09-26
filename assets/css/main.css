@@ -144,6 +144,11 @@ hr.linux {
 li {
   line-height: 1.4em;
 }
+#modulo {
+    margin-top: -60px;
+    padding-bottom: 60px;
+    display: inline-block;
+}
 form {
     text-align: left;
     font-size: 90%;
