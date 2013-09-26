@@ -147,7 +147,7 @@ li {
 #modulo {
     margin-top: -60px;
     padding-bottom: 60px;
-    display: inline-block;
+    display: block;
 }
 form {
     text-align: left;
