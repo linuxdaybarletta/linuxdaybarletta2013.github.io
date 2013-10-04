@@ -162,6 +162,14 @@ li {
     padding-bottom: 60px;
     display: block;
 }
+.ampersat {
+    font-family: arial, sans-serif;
+}
+.panel {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
 form {
     text-align: left;
     font-size: 90%;

@@ -1,0 +1,137 @@
+<script type="text/javascript">
+var is_touch_device = ("ontouchstart" in window) || window.DocumentTouch && document instanceof DocumentTouch;
+// popover only for desktop
+if (! is_touch_device) {
+    $(function() {
+        $(".popover-on").popover();
+    });
+}
+$("#city").change(function() {
+    if ($("#city").val() == "Altro") {
+        $("#city-other").removeAttr("disabled");
+        $("#city-other").parent("div").removeClass("has-error").slideDown();
+        $("#city-other").focus();
+        // $("#city").parent("div").removeClass("has-success").addClass("has-warning");
+    } else {
+        $("#city-other").attr("disabled", "disabled").val("");
+        $("#city-other").parent("div").slideUp();
+    }
+});
+// $("#city-other").focusout(function() {
+//     if ($("#city").validate()) {
+//         $("#city").parent("div").removeClass("has-error").removeClass("has-warning").addClass("has-success");
+//     } else {
+//         $("#city").parent("div").removeClass("has-success").removeClass("has-warning").addClass("has-error");
+//     }
+// });
+var default_panel = "panel-info";
+var error_panel = "panel-danger";
+var warning_panel = "panel-warning";
+var success_panel = "panel-success";
+$.validator.setDefaults({
+    ignore: [],
+});
+$("#form").validate({
+    submitHandler: function() {
+        $.ajax({
+            dataType: "jsonp",
+            //test api: e19307a500e5f6c23047d00a5074b6fc
+            url: "http://getsimpleform.com/messages/ajax?form_api_token=dbf9c4c6558b76e62bf3a2e0f30339b9",
+            data: $("input, select").serialize(),
+            success: function() {
+                $("input, select, form button").prop("disabled", true);
+                $(".panel")
+                    .removeClass(default_panel)
+                    .removeClass(error_panel)
+                    .removeClass(warning_panel)
+                    .addClass(success_panel);
+                $(".panel-title").text("Grazie!");
+                $(".panel-p").slideUp(function() {
+                    $(".panel-p").text("Ti aspettiamo!");
+                    $(".panel-p").slideDown();
+                });
+            },
+            error: function() {
+                $(".panel")
+                    .removeClass(default_panel)
+                    .removeClass(error_panel)
+                    .removeClass(success_panel)
+                    .addClass(warning_panel);
+                $(".panel-p").slideUp(function() {
+                    $(".panel-p").text("Qualcosa è andato storto, riprova!");
+                    $(".panel-p").slideDown();
+                });
+            }
+        });
+        return false;
+    },
+    invalidHandler: function(event, validator) {
+        $(".panel")
+            .removeClass(default_panel)
+            .removeClass(warning_panel)
+            .removeClass(success_panel)
+            .addClass(error_panel);
+        $(".panel-p").slideUp(function() {
+            $(".panel-p").text("Tutti i campi sono obbligatori!");
+            $(".panel-p").slideDown();
+        });
+    },
+    errorPlacement: function(error, element) { },
+    errorClass: "has-error",
+    validClass: "has-success",
+    rules: {
+        firstname: {
+            required: true
+        },
+        lastname: {
+            required: true
+        },
+        city: {
+            required: true
+        },
+        cityother: {
+            required: true
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        how: {
+            required: true
+        },
+        dvd: {
+            required: true
+        }
+    },
+    messages: {
+        firstname: {
+            required: "Questo campo è richiesto"
+        },
+        lastname: {
+            required: "Questo campo è richiesto"
+        },
+        city: {
+            required: "Questo campo è richiesto"
+        },
+        cityother: {
+            required: "Questo campo è richiesto",
+        },
+        email: {
+            required: "Questo campo è richiesto",
+            email: "Inserisci un indirizzo email valido"
+        },
+        how: {
+            required: "Questo campo è richiesto"
+        },
+        dvd: {
+            required: "Questo campo è richiesto"
+        }
+    },
+    highlight: function(element, errorClass, validClass) {
+        $(element).closest(".form-group").addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+        $(element).closest(".form-group").addClass(validClass).removeClass(errorClass);
+    },
+});
+</script>
