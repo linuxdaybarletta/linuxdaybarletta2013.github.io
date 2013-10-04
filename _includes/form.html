@@ -12,38 +12,53 @@
     <div class="form-group">
         <label class="control-label" for="city">Comune di provenienza</label>
         <select class="form-control" id="city" name="city" required>
-            <option value=''>Seleziona...</option>
+            <option value="">Seleziona...</option>
             {% include comuni.html %}
         </select>
     </div>
 
+    <div class="form-group" style="display: none">
+        <label class="control-label" for="city-other">Comune non nella lista</label>
+        <input type="text" class="form-control" id="city-other" placeholder="Città" name="cityother" disabled required>
+    </div>
+
     <div class="form-group">
-        <label class="control-label" for="email" id="email-info">Indirizzo email</label>
-        <div class="input-group">
-            <span class="input-group-addon ampersat">@</span>
+        <label class="control-label popover-on" for="competenza" rel="popover" data-trigger="hover" data-content="Chiunque può partecipare all'evento, anche i più esperti, mettendo a disposizione le proprie competenze ed esponendo le proprie idee!">Come intendi partecipare? <sup class="muted"><code>i</code></sup></label>
+        <select class="form-control" id="competenza" name="competenza" required>
+            <option value="">Seleziona...</option>
+            <option value="Competente">Mi piacerebbe collaborare con i più esperti</option>
+            <option value="Novizio">Vorrei ricevere aiuto durante l'installazione</option>
+            <option value="Interessato">Sono interessato solo a saperne di più</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label popover-on" for="email" rel="popover" data-trigger="hover" data-original-title="Per cosa lo usiamo?" data-content="Potremmo volerti contattare per avvisi o comunicazioni. Inseriscilo correttamente!">Indirizzo email <sup class="muted"><code>i</code></sup></label>
+        <!-- <div class="input-group"> -->
+        <!--     <span class="input-group-addon ampersat">@</span> -->
             <input type="email" class="form-control" id="email" placeholder="email" name="email" required>
-        </div>
-        <label class="control-label muted hidden-desktop" for="email" id="email-info"><small>Gli indirizzi email ricevuti non saranno ceduti né pubblicati.</small></label>
+        <!-- </div> -->
     </div>
 
     <div class="form-group">
         <label class="control-label" for="how">Come sei venuto a conoscenza dell'evento?</label>
         <select class="form-control" id="how" name="how" required>
-            <option value=''>Seleziona...</option>
-            <option value='Carta'>Pubblicità cartacea</option>
-            <option value='Media'>Mezzi d'informazione</option>
-            <option value='Social'>Social networks</option>
-            <option value='Ricerca'>Tramite una ricerca online</option>
-            <option value='Voci'>Attraverso amici, ne ho sentito parlare in giro</option>
+            <option value="">Seleziona...</option>
+            <option value="LinuxDay">Dal sito www.linuxday.it</option>
+            <option value="Carta">Pubblicità cartacea</option>
+            <option value="Media">Mezzi d'informazione</option>
+            <option value="Social">Social networks</option>
+            <option value="Ricerca">Tramite una ricerca online</option>
+            <option value="Voci">Attraverso amici, ne ho sentito parlare in giro</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label class="control-label" for="DVD">Il tuo computer è provvisto di lettore DVD?</label>
-        <select class="form-control" id="DVD" name="DVD" required>
-            <option value=''>Seleziona...</option>
-            <option value='No'>No</option>
-            <option value='Si'>Sì</option>
+        <label class="control-label" for="dvd">Il tuo computer è provvisto di lettore DVD?</label>
+        <select class="form-control" id="dvd" name="dvd" required>
+            <option value="">Seleziona...</option>
+            <option value="No">No</option>
+            <option value="Si">Sì</option>
         </select>
     </div>
 
