@@ -5,6 +5,8 @@ if (! is_touch_device) {
     $(function() {
         $(".popover-on").popover();
     });
+} else {
+    $(".info-pop").text("");
 }
 $("#city").change(function() {
     if ($("#city").val() == "Altro") {
