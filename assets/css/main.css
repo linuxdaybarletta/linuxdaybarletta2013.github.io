@@ -25,6 +25,9 @@
         height: auto;
         width: auto;
     }
+    .top-message > .alert {
+        width: 50%;
+    }
     .content {
         margin: 0 50px;
     }
@@ -47,6 +50,9 @@
 @media (min-width: 481px) and (max-width: 767px) {/*{{{*/
     .jumbotron img {
         width: auto;
+    }
+    .top-message > .alert {
+        width: 60%;
     }
     .content {
         margin: 0 25px;
@@ -77,6 +83,9 @@
     }
     hr.linux {
         background: url('../img/linuxhr-small.png') no-repeat center !important;
+    }
+    .top-message > .alert {
+        width: 80%;
     }
     .content {
         margin: 0 15px;
@@ -152,9 +161,9 @@ li {
     z-index: 0;
 }
 .top-message > .alert {
+    max-width: 768px;
     position: relative;
     margin: 0 auto;
-    width: 50%;
     text-align: left;
 }
 #modulo {
