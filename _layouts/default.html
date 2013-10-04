@@ -47,6 +47,11 @@
         {% include social_scripts.html %}
         {% endif %}
         <!-- /Social scripts ]]] -->
+        <!-- form validator [[[ -->
+        {% if page.form %}
+        {% include validator.html %}
+        {% endif %}
+        <!-- /form validator ]]] -->
     </body>
     <!-- /body ]]] -->
 </html>
