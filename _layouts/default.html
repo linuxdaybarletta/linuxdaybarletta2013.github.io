@@ -35,7 +35,7 @@
         </script>
         <script src="assets/js/ganalytics.js">
         </script>
-        {% if page.validator %}
+        {% if page.form %}
         <script src="assets/js/jquery.validate.js"></script>
         {% endif %}
         {% if page.nospam %}
@@ -102,6 +102,11 @@
         {% include social_scripts.html %}
         {% endif %}
         <!-- /Social scripts ]]] -->
+        <!-- form validator [[[ -->
+        {% if page.form %}
+        {% include validator.html %}
+        {% endif %}
+        <!-- /form validator ]]] -->
     </body>
     <!-- /body ]]] -->
 </html>
