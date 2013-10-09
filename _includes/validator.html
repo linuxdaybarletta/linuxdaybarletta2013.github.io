@@ -19,6 +19,15 @@ $("#city").change(function() {
         $("#city-other").parent("div").slideUp();
     }
 });
+$("#partecipazione").change(function() {
+    if ($("#partecipazione").val() != "Novizio") {
+        $("#dvd").attr("disabled", "disabled").val("");
+        $("#dvd").parent("div").slideUp();
+    } else {
+        $("#dvd").removeAttr("disabled");
+        $("#dvd").parent("div").removeClass("has-error").slideDown();
+    }
+});
 // $("#city-other").focusout(function() {
 //     if ($("#city").validate()) {
 //         $("#city").parent("div").removeClass("has-error").removeClass("has-warning").addClass("has-success");
@@ -37,8 +46,8 @@ $("#form").validate({
     submitHandler: function() {
         $.ajax({
             dataType: "jsonp",
-            //test api: dbf9c4c6558b76e62bf3a2e0f30339b9
-            url: "http://getsimpleform.com/messages/ajax?form_api_token=e19307a500e5f6c23047d00a5074b6fc",
+            //test api: e19307a500e5f6c23047d00a5074b6fc
+            url: "http://getsimpleform.com/messages/ajax?form_api_token=dbf9c4c6558b76e62bf3a2e0f30339b9",
             data: $("input, select").serialize(),
             success: function() {
                 $("input, select, form button").prop("disabled", true);
