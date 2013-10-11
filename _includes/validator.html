@@ -17,19 +17,18 @@ $("#city").change(function() {
         // $("#city").parent("div").removeClass("has-success").addClass("has-warning");
     } else {
         // hide
-        $("#city-other").attr("disabled", "disabled").val("");
-        $("#city-other").parent("div").removeClass("has-success").removeClass("has-error").slideUp();
+    $("#city-other").parent("div").removeClass("has-success").removeClass("has-error").slideUp(function() {$("#city-other").attr("disabled", "disabled").val("")});
     }
 });
 $("#partecipazione").change(function() {
     if ($("#partecipazione").val() != "Novizio") {
         // hide
+        $("#dvd").parent("div").removeClass("has-success").removeClass("has-error");
         $("#dvd").attr("disabled", "disabled").val("");
-        $("#dvd").parent("div").removeClass("has-success").removeClass("has-error").slideUp();
     } else {
         // show
         $("#dvd").removeAttr("disabled");
-        $("#dvd").parent("div").slideDown();
+        // $("#dvd").parent("div").slideDown();
     }
 });
 // $("#city-other").focusout(function() {
