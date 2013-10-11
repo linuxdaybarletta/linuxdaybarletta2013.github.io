@@ -21,12 +21,12 @@ $("#city").change(function() {
     }
 });
 $("#partecipazione").change(function() {
-    if ($("#partecipazione").val() != "Novizio") {
-        // hide
+    if (! $("#partecipazione").val().match("Novizio|^$")) {
+        // disable
         $("#dvd").parent("div").removeClass("has-success").removeClass("has-error");
         $("#dvd").attr("disabled", "disabled").val("");
     } else {
-        // show
+        // enable
         $("#dvd").removeAttr("disabled");
         // $("#dvd").parent("div").slideDown();
     }
