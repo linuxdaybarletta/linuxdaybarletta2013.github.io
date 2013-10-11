@@ -23,7 +23,11 @@ Per la realizzazione del sito sono stati usati i seguenti applicativi software:
   * [Mozilla Firefox](https://mozilla.org/firefox);
   * [Midori](http://www.midori-browser.org/).
 
-Il sistema operativo utilizzato per lo sviluppo è stato [Manjaro Linux](http://manjaro.org/).
+Il sistema operativo utilizzato per lo sviluppo è [Manjaro Linux](http://manjaro.org/).
+
+### Web apps
+
+Per il modulo di iscrizione si è fatto uso dell'applicazione web [Simple Form](http://getsimpleform.com).
 
 Autore
 ------
