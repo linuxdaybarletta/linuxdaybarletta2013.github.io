@@ -10,22 +10,66 @@ jumbolink: #
 permalink: linuxday-barletta-2013-partecipazione.html
 weight: 7
 ---
-<p>Per aiutarci ad accoglierti al meglio ti chiediamo di compilare il modulo
-sottostante in tutti i suoi campi. Grazie!</p>
+</p>
+La partecipazione è completamente gratuita ed aperta a tutti, ti chiediamo solo
+di compilare un piccolo <a href="#modulo">modulo di iscrizione</a> e di seguire
+delle semplici istruzioni per aiutarci ad accoglierti al megio. Grazie!
+</p>
+<h3>Cosa portare da casa</h3>
+<p>
+Nel caso voglia portare il tuo computer desktop ("fisso"), dovrai
+necessariamente portare anche <b>monitor</b>, <b>mouse</b>, <b>tastiera</b> ed
+altre periferiche (se le hai) quali <b>webcam</b>, <b>scheda audio esterna</b>
+e così via.  Non devi invece portare stampanti, modem o penne USB per la
+navigazione Internet.</p>
+<p>Se possiedi un computer con lettore DVD, ti verrà fornito un disco necessaro
+per procedere con l'installazione del tuo nuovo sistema operativo GNU/Linux. In
+caso invece il tuo computer non sia provvisto di lettore ottico, dovrai portare
+da casa una <b>memoria USB</b> vuota da non meno di <b>2 GB</b> ed eseguire il
+<b>download del file immagine</b>, necessario all'installazione, sul tuo
+computer (lo stesso che porterai sabato 26 ottobre!).
+</p>
+<p>
+Sono disponibili diversi file immagine a seconda delle esigenze.
+</p>
+<h4>Sistemi a 64 bit</h4>
+<p>Se hai un computer con architettura a 64 bit, utilizza uno di <a
+href="http://www.linuxmint.com/edition.php?id=134">questi link</a> per il
+download dell'immagine disco necessaria all'installazione di Linux Mint sul tuo
+computer.</p>
+<p>Se non sai cosa significa "computer a 64 bit", continua a leggere.</p>
+<h4>Sistemi a 32 bit</h4>
+<p>Se hai un computer con architettura a 32 bit o non hai idea di quale sia
+l'architettura del tuo computer, utilizza uno dei link presenti in <a
+href="http://www.linuxmint.com/edition.php?id=133">questa pagina</a> per
+scaricare l'ultima versione di Linux Mint.</p> <p>Se te la senti, segui anche
+le istruzioni che seguono su come realizzare un supporto USB di installazione:
+ci farà risparmiare molto tempo!
+<h4>Realizzare una penna USB con Linux Mint</h4>
+<p>Per prima cosa <b>scarica <i>Linux Live USB creator</i></b> da <a
+href="http://www.linuxliveusb.com/en/download">questa pagina</a> ed installalo.
+Una volta avviato il programma, bisogna seguire pochi semplici passi:
+<ol>
+    <li><b>seleziona la chiavetta</b> da utilizzare;</li>
+    <li><b>seleziona il file immagine</b> che hai scaricato in precedenza (clicca su "ISO/IMG/ZIP" e segui le istruzioni);</li>
+    <li>spunta "<b>Formatta la chiavetta</b> in FAT32";</li>
+    <li><b>clicca sull'icona</b> che rappresenta un fulmine per portare a termine l'operazione.</li>
+</ol>
+</p>
+<h3>Preparazione del computer</h3>
+<p>
+Per agevolare il lavoro di chi ti aiuterà durante l'installazione del tuo nuovo
+sistema operativo GNU/Linux a fianco del sistema operativo già installato sul
+tuo computer, ti invitiamo a svolgere alcune semplici operazioni che ti faranno
+risparmiare moltissimo tempo ed eviteranno gravi problemi.</p>
+<p>Se non hai interesse a mantenere il sistema operativo già presente sul tuo
+computer o possiedi un computer nuovo privo di sistema operativo e dati
+interessanti, salta questa sezione.</p>
+<ol>
+    <li>Per prima cosa esegui un <b>backup di tutti i dati</b> su un hard disk esterno o su un altro computer;</li>
+    <li>esegui la <b>deframmentazione del disco</b> (trovi informazioni su come fare <a href="http://support.microsoft.com/kb/314848">qui</a> per Win XP, <a href="http://windows.microsoft.com/it-it/windows-vista/improve-performance-by-defragmenting-your-hard-disk">qui</a> per Win Vista e <a href="http://windows.microsoft.com/it-it/windows7/improve-performance-by-defragmenting-your-hard-disk">qui</a> per Win 7);</li>
+    <li><b>ridimensiona la partizione</b> contenente il sistema operativo già installato a seconda delle tue necessità, lasciando almeno 10 GB liberi (se non sai come fare verrai aiutato durante l'installazione, ma l'operazione richiede un certo tempo, <a href="https://www.google.it/search?hl=it&q=ridimensionare%20partizione%20windows">prova a cercare qualche informazione</a> prima di rinunciare).</li>
+</ol>
 <br>
 <span id="modulo"></span>
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Iscriviti!</h3>
-        <p class="panel-p" style="display:none"></p>
-    </div>
-    <div class="panel-body" style="padding:30px 20px">
-        <div class="row">
-            <div class="col-md-1 col-lg-2"></div>
-            <div id="form-div" class="col-md-10 col-lg-8">
-                {% include form.html %}
-            </div>
-            <div class="col-md-1 col-lg-2"></div>
-        </div>
-    </div>
-</div>
+{% include form-panel.html %}
