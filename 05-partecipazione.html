@@ -8,6 +8,8 @@ jumboimages:
  - title-phone.png
 jumbolink: #
 permalink: linuxday-barletta-2013-partecipazione.html
+topalert: true
+disabled: true
 weight: 6
 ---
 </p>
@@ -70,6 +72,8 @@ interessanti, salta questa sezione.</p>
     <li>esegui la <b>deframmentazione del disco</b> (trovi informazioni su come fare <a href="http://support.microsoft.com/kb/314848">qui</a> per Windows XP, <a href="http://windows.microsoft.com/it-it/windows-vista/improve-performance-by-defragmenting-your-hard-disk">qui</a> per Windows Vista e <a href="http://windows.microsoft.com/it-it/windows7/improve-performance-by-defragmenting-your-hard-disk">qui</a> per Windows 7);</li>
     <li><b>ridimensiona la partizione</b> contenente il sistema operativo già installato a seconda delle tue necessità, lasciando almeno 10 GB liberi (se non sai come fare o riscontri problemi verrai aiutato durante l'installazione, ma l'operazione richiede un certo tempo, <a href="https://www.google.it/search?hl=it&q=ridimensionare%20partizione%20windows">prova a cercare qualche informazione</a> prima di rinunciare, non è difficile!).</li>
 </ol>
+{% unless page.disabled %}
 <br>
 <span id="modulo"></span>
 {% include form-panel.html %}
+{% endunless %}
