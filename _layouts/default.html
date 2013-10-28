@@ -15,6 +15,10 @@
         <link href="assets/css/bootstrap3.css" rel="stylesheet" type="text/css">
         <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+        {% if page.disabled %}
+        <link href="assets/css/disabled.css" rel="stylesheet" type="text/css">
+        {% endif %}
+
         {% include fonts.html %}
         <!-- /Styles ]]] -->
 
@@ -63,6 +67,7 @@
     <!-- /head ]]] -->
     <!-- body [[[ -->
     <body>
+        {% if page.topalert %}{% include masteralert.html %}{% endif %}
         <!-- wrapper [[[ -->
         <div class="wrapper container">
             <!-- jumbotron [[[ -->
